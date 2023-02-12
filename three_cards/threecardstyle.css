@@ -1,0 +1,141 @@
+@keyframes reappear {
+  from {
+    top: 0px;
+  }
+  to {
+    top: -50px;
+  }
+}
+
+.roboto-mono {
+  font-family: "Roboto Mono", monospace;
+}
+
+body #card-display-background:after, body #card-display-background:before {
+  content: "";
+  height: inherit;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: inherit;
+  z-index: 1;
+}
+body #card-display-background:after {
+  background: linear-gradient(to top, #1e1e1e, transparent, #1e1e1e);
+}
+body #card-display-background:before {
+  background: linear-gradient(to right, #1e1e1e 5%, transparent 20%, transparent 80%, #1e1e1e 95%);
+}
+body #card-display {
+  display: flex;
+  gap: 20px;
+  position: relative;
+  z-index: 2;
+}
+body #card-display.transition {
+  transition: transform 500ms;
+}
+body #card-display .card-wrapper {
+  background-color: transparent;
+  border: none;
+  border-radius: 15px;
+  outline: none;
+  padding: 0px;
+  position: relative;
+  transition: transform 250ms;
+}
+body #card-display .card-wrapper:first-of-type {
+  transform: scale(0.85);
+}
+body #card-display .card-wrapper:first-of-type .card {
+  background-color: #3ac66e;
+}
+body #card-display .card-wrapper:nth-of-type(2) {
+  transform: scale(0.95);
+}
+body #card-display .card-wrapper:last-of-type {
+  transform: scale(0.85);
+}
+body #card-display .card-wrapper:last-of-type .card {
+  background-color: #29b6f6;
+}
+body #card-display .card-wrapper:hover {
+  transform: scale(1);
+}
+body #card-display .card-wrapper:hover .card .card-svgs .svg-left {
+  transform: translate(-30%, -30%);
+}
+body #card-display .card-wrapper:hover .card .card-svgs .svg-right {
+  transform: translate(30%, -30%);
+}
+body #card-display .card-wrapper:hover .card .card-icon {
+  transform: translate(-20px, 20%) scale(1.2) rotate(-10deg);
+}
+body #card-display .card-wrapper:hover .card-chef {
+  opacity: 1;
+  top: -50px;
+}
+body #card-display .card-wrapper:active {
+  transform: scale(0.95);
+}
+body #card-display .card-wrapper:active .card .card-svgs .svg-left {
+  transform: translate(-30%, -30%) scale(1.2);
+}
+body #card-display .card-wrapper:active .card .card-svgs .svg-right {
+  transform: translate(30%, -30%) scale(1.2);
+}
+body #card-display .card-wrapper:active .card .card-icon {
+  transform: translate(-20px, 20%) scale(1.4) rotate(-10deg);
+}
+
+body #card-display .card-wrapper .card {
+  /* background-color: #141414; */
+  background-color: #ef5350;
+  border-radius: inherit;
+  box-shadow: 0px 0px 40px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  height: 200px;
+  position: relative;
+  width: 355px;
+  z-index: 2;
+}
+body #card-display .card-wrapper .card .card-svgs {
+  border-radius: inherit;
+  height: 100%;
+  left: 0px;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: 2;
+}
+body #card-display .card-wrapper .card .card-svgs .svg {
+  opacity: 0.1;
+  position: absolute;
+  transition: transform 250ms;
+}
+body #card-display .card-wrapper .card .card-svgs .svg-left {
+  left: 0px;
+  top: 50%;
+  transform: translate(-25%, -25%);
+}
+body #card-display .card-wrapper .card .card-svgs .svg-right {
+  right: 0px;
+  top: -50%;
+  transform: translate(25%, -25%);
+}
+body #card-display .card-wrapper .card .card-amount {
+  bottom: 20px;
+  color: white;
+  font-size: 5em;
+  left: 20px;
+  position: absolute;
+}
+body #card-display .card-wrapper .card .card-brand {
+  color: white;
+  font-size: 2.5em;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}

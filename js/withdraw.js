@@ -3,15 +3,13 @@
 //get the withdraw amount from input field
 
 document.getElementById("btn-withdraw").addEventListener("click", function () {
-  const withdrawFieldInput = document.getElementById("withdraw-field").value;
-  const newWithdraw = parseFloat(withdrawFieldInput);
-
-  document.getElementById("withdraw-field").value = "";
-
-if(isNaN(newWithdraw)){
-    alert('please provide a valid number');
+  const withdrawFieldInput = document.getElementById("withdraw-field").value;  
+  
+  if(isNaN(withdrawFieldInput) || withdrawFieldInput == ''){
+    alert('Please provide a valid number');
     return;
-}
+  }
+  const newWithdraw = parseFloat(withdrawFieldInput);
 
   const withdrawDisplay = document.getElementById("withdraw-total");
   const oldWithdraw = parseFloat(withdrawDisplay.innerText);
@@ -23,12 +21,14 @@ if(isNaN(newWithdraw)){
 
 
   if(newWithdraw > oldBalance){
-    alert('Baap er bank e eto taka nai');
+    alert('Insufficient balance');
     return;
   }
   const currentWithdraw = newWithdraw + oldWithdraw;
   withdrawDisplay.innerText = currentWithdraw;
 
   balanceTotalDisplay.innerText = oldBalance - newWithdraw;
+
+  document.getElementById("withdraw-field").value = "";
 
 });

@@ -91,8 +91,9 @@ body #card-display .card-wrapper:active .card .card-icon {
 body #card-display .card-wrapper .card {
   /* background-color: #141414; */
   background-color: #ef5350;
+  /* background-color: rgb(240, 82, 79) */
   border-radius: inherit;
-  box-shadow: 0px 0px 40px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 40px 10px rgba(0, 0, 0, 0.6);
   cursor: pointer;
   height: 200px;
   position: relative;

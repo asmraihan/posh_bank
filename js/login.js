@@ -13,6 +13,6 @@ document.getElementById('btn-submit').addEventListener('click', function(){
        window.location.href = 'bank.html'
     }
     else{
-        alert('invalid user !!!\n email : asm \n password : 123')
+        alert('Invalid User !!!\n Email : asm \n Password : 123')
     }
 })
